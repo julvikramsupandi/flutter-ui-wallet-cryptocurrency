@@ -69,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
               physics: BouncingScrollPhysics(),
               child: Column(
                 children: [
-                  listCryptoItem(
+                  _listCryptoItem(
                     iconUrl:
                         'https://icons.iconarchive.com/icons/cjdowner/cryptocurrency/128/Bitcoin-icon.png',
                     myCrypto: '3.529020 BTC',
@@ -77,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     myProfit: '\$19.153',
                     precent: 4.32,
                   ),
-                  listCryptoItem(
+                  _listCryptoItem(
                     iconUrl:
                         'https://icons.iconarchive.com/icons/cjdowner/cryptocurrency/128/Ethereum-icon.png',
                     myCrypto: '12.83789 ETH',
@@ -85,7 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     myProfit: '\$4.822',
                     precent: 3.97,
                   ),
-                  listCryptoItem(
+                  _listCryptoItem(
                     iconUrl:
                         'https://icons.iconarchive.com/icons/cjdowner/cryptocurrency/128/Ripple-icon.png',
                     myCrypto: '1911.6374736 XRP',
@@ -187,7 +187,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget listCryptoItem(
+  Widget _listCryptoItem(
       {String iconUrl,
       double precent = 0,
       String myCrypto,
