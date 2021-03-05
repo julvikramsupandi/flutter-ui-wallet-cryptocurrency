@@ -1,11 +1,16 @@
-# Flutter UI Wallet Cryptocurrency
+# wallet_cryptocurrency
 
-## References 
-[wallet cryptocurrency mobile app](https://www.freepik.com/free-psd/template-wallet-cryptocurrency-mobile-app_12385833.htm)
+A new Flutter project.
 
-![Wallet_Cryptocurrency_Mobile_App](https://user-images.githubusercontent.com/37796466/109503400-cb708c80-7acc-11eb-8d47-37acd362204c.jpg)
+## Getting Started
 
+This project is a starting point for a Flutter application.
 
-## Flutter
+A few resources to get you started if this is your first Flutter project:
 
-![Wallet_Cryptocurrency_Mobile_App - flutter](https://user-images.githubusercontent.com/37796466/109503430-d3c8c780-7acc-11eb-90be-8f135b937888.jpg)
+- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+
+For help getting started with Flutter, view our
+[online documentation](https://flutter.dev/docs), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
