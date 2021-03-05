@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wallet_cryptocurrency/ui/component.dart';
 import 'package:wallet_cryptocurrency/ui/screen/home.dart';
-import 'package:wallet_cryptocurrency/ui/screen/line_chart.dart';
 
 void main() {
   runApp(MyApp());
@@ -105,7 +104,7 @@ class _MainAppState extends State<MainApp> {
       case TabItem.home:
         return HomeScreen();
       case TabItem.explore:
-        return LineChartSample1();
+      // return HomeScreen();
       case TabItem.notification:
       // return HomeScreen()
       case TabItem.setting:
