@@ -99,7 +99,7 @@ class DetailWalletScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 150,
+                    height: MediaQuery.of(context).size.height / 5,
                     child: Stack(children: [
                       LineChart(
                         sampleData(),
