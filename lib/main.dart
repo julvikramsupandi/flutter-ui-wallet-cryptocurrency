@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wallet_cryptocurrency/ui/component/appBar.dart';
+import 'package:wallet_cryptocurrency/ui/component.dart';
 import 'package:wallet_cryptocurrency/ui/screen/home.dart';
 
 void main() {
