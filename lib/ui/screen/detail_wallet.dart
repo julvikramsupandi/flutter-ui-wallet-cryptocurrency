@@ -1,3 +1,4 @@
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:wallet_cryptocurrency/ui/component.dart';
 
@@ -61,14 +62,65 @@ class DetailWalletScreen extends StatelessWidget {
               height: 15,
             ),
             card(
+              padding: 0,
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
-                    height: 50,
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            _dot(color: Colors.pink),
+                            Text(
+                              'Lower: \$4.896',
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black45),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            _dot(color: Colors.green),
+                            Text(
+                              'Higher:\$6.857',
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black45),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
-                  Text("Chart Comming Soon", style: TextStyle(fontSize: 20)),
                   SizedBox(
-                    height: 50,
+                    height: 150,
+                    child: Stack(children: [
+                      LineChart(
+                        sampleData(),
+                      ),
+                      Positioned(
+                        bottom: 20,
+                        left: 20,
+                        child: Row(
+                          children: [
+                            _dot(size: 18, color: Colors.orangeAccent),
+                            Text(
+                              '1BTC=\$5.483',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ]),
                   ),
                 ],
               ),
@@ -96,6 +148,78 @@ class DetailWalletScreen extends StatelessWidget {
               ],
             )
           ],
+        ),
+      ),
+    );
+  }
+
+  LineChartData sampleData() {
+    return LineChartData(
+      lineTouchData: LineTouchData(
+        enabled: false,
+      ),
+      gridData: FlGridData(
+        show: false,
+      ),
+      titlesData: FlTitlesData(
+        bottomTitles: SideTitles(
+          showTitles: false,
+        ),
+        leftTitles: SideTitles(
+          showTitles: false,
+        ),
+      ),
+      borderData: FlBorderData(
+        show: false,
+      ),
+      // minX: 0,
+      maxX: 12,
+      maxY: 4,
+      minY: 0,
+      lineBarsData: linesBarData(),
+    );
+  }
+
+  List<LineChartBarData> linesBarData() {
+    return [
+      LineChartBarData(
+        spots: [
+          FlSpot(1, 2),
+          FlSpot(3, 2.8),
+          FlSpot(7, 2.2),
+          FlSpot(10, 2.8),
+          FlSpot(12, 2.6),
+          FlSpot(13, 3),
+        ],
+        isCurved: true,
+        colors: const [
+          Colors.orangeAccent,
+        ],
+        barWidth: 4,
+        isStrokeCapRound: true,
+        dotData: FlDotData(
+          show: false,
+        ),
+        belowBarData: BarAreaData(show: true, colors: [
+          Colors.orange[100],
+        ]),
+      ),
+    ];
+  }
+
+  Widget _dot({double size = 10, Color color = Colors.black}) {
+    return Container(
+      margin: EdgeInsets.all(10),
+      width: size,
+      height: size,
+      child: ClipRRect(
+        borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(20),
+            bottomRight: Radius.circular(20),
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20)),
+        child: Container(
+          color: color,
         ),
       ),
     );
