@@ -20,7 +20,8 @@ class DetailWalletScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 25),
-        child: Column(
+        child: ListView(
+          physics: BouncingScrollPhysics(),
           children: [
             SizedBox(
               height: 25,
@@ -146,7 +147,10 @@ class DetailWalletScreen extends StatelessWidget {
                   ),
                 ),
               ],
-            )
+            ),
+            SizedBox(
+              height: 20,
+            ),
           ],
         ),
       ),
@@ -162,11 +166,25 @@ class DetailWalletScreen extends StatelessWidget {
         show: false,
       ),
       titlesData: FlTitlesData(
-        bottomTitles: SideTitles(
-          showTitles: false,
+        bottomTitles: AxisTitles(
+          sideTitles: SideTitles(
+            showTitles: false,
+          ),
         ),
-        leftTitles: SideTitles(
-          showTitles: false,
+        leftTitles: AxisTitles(
+          sideTitles: SideTitles(
+            showTitles: false,
+          ),
+        ),
+        topTitles: AxisTitles(
+          sideTitles: SideTitles(
+            showTitles: false,
+          ),
+        ),
+        rightTitles: AxisTitles(
+          sideTitles: SideTitles(
+            showTitles: false,
+          ),
         ),
       ),
       borderData: FlBorderData(
@@ -192,17 +210,16 @@ class DetailWalletScreen extends StatelessWidget {
           FlSpot(13, 3),
         ],
         isCurved: true,
-        colors: const [
-          Colors.orangeAccent,
-        ],
+        color: Colors.orangeAccent,
         barWidth: 4,
         isStrokeCapRound: true,
         dotData: FlDotData(
           show: false,
         ),
-        belowBarData: BarAreaData(show: true, colors: [
-          Colors.orange[100],
-        ]),
+        belowBarData: BarAreaData(
+          show: true,
+          color: Colors.orange[100],
+        ),
       ),
     ];
   }
@@ -226,12 +243,12 @@ class DetailWalletScreen extends StatelessWidget {
   }
 
   Widget _cardWallet(
-      {String crypto,
+      {required String crypto,
       cryptoShort,
       iconUrl,
       total,
       totalCrypto,
-      double precent}) {
+      required double precent}) {
     return card(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -295,7 +312,7 @@ class DetailWalletScreen extends StatelessWidget {
     );
   }
 
-  Widget _actionButton({Color color, String text}) {
+  Widget _actionButton({required Color color, required String text}) {
     return card(
         child: Column(
       children: [

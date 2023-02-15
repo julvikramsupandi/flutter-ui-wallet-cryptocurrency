@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-Widget appBar({Widget left, String title, Widget right}) {
+Widget appBar(
+    {required Widget left, required String title, required Widget right}) {
   return Container(
     color: Colors.white,
     child: Padding(

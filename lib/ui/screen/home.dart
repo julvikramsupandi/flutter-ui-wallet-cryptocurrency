@@ -103,7 +103,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _cardWalletBalance(BuildContext context,
-      {String total, totalCrypto, double precent}) {
+      {required String total, totalCrypto, required double precent}) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 5),
       child: card(
@@ -188,9 +188,9 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _listCryptoItem(
-      {String iconUrl,
+      {required String iconUrl,
       double precent = 0,
-      String myCrypto,
+      required String myCrypto,
       myBalance,
       myProfit}) {
     return Padding(

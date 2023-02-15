@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 Widget card(
-    {double width = double.infinity, double padding = 20, Widget child}) {
+    {double width = double.infinity,
+    double padding = 20,
+    required Widget child}) {
   return Container(
     width: width,
     padding: EdgeInsets.all(padding),
